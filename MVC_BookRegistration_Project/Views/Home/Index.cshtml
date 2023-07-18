@@ -1,0 +1,32 @@
+﻿@model List<MVC_BookRegistration_Project.Models.Book>
+
+<h1>Book Guide</h1>
+
+<p>
+    <a class="btn btn-success" asp-action="AddBook">Add New Book</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Book Name</th>
+            <th>Author</th>
+            <th>Year</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>@book.Title</td>
+                <td>@book.Author</td>
+                <td>@book.Year</td>
+                <td>
+                    <a class="btn btn-primary" asp-action="UpdateBook" asp-route-id="@book.Id">Update</a>
+                    <a class="btn btn-danger" asp-action="DeleteBook" asp-route-id="@book.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

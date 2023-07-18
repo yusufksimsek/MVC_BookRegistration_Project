@@ -1,0 +1,12 @@
+﻿@model MVC_BookRegistration_Project.Models.Book
+
+<h2>Delete Book</h2>
+
+<h3>Book Name: @Model.Title</h3>
+
+<form asp-action="DeleteBook" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-action="Index">Cancel</a>
+</form>
+
